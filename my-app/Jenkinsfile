@@ -13,14 +13,12 @@ pipeline {
                 echo "M2_HOME = /usr/share/mvn"
             }
         }
-        stage('Build') {
-            steps {
-              //  dir("/var/lib/jenkins/workspace/New_demo/my-app/") {
-                sh 'mvn clean package'
-                }
-            
-            }
-        }
+      stages {
+         stage ('Build') {
+              steps {
+                     sh 'mvn clean package'
+       }
+      }
      }
     post {
        always {
